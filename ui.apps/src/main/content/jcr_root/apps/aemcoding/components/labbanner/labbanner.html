@@ -1,0 +1,13 @@
+<sly data-sly-use.model="com.tungnd.aem.core.models.LabBannerModel"/>
+<div class="labbanner">
+   <p class="labbanner__label">
+       ${model.label || "Lab Banner"}
+   </p>
+   <h2 class="labbanner__title">
+       ${model.title || "Lab Banner"}
+   </h2>
+   <p class="labbanner__description">
+       ${model.jcr:description || "Lab Banner Static Default Description - Please enter some val"}
+   </p>
+
+</div>
