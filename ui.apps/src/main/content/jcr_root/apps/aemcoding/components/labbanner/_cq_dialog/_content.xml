@@ -36,6 +36,7 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldLabel="Title"
+                                    required="{Boolean}true"
                                     name="./title"/>
 
                             <description
@@ -43,6 +44,95 @@
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
                                     fieldLabel="Description"
                                     name="./description"/>
+
+                            <ctaText
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="CTA Text"
+                                    name="./ctaText"/>
+
+                            <ctaLink
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="CTA Link"
+                                    rootPath="/content"
+                                    name="./ctaLink"/>
+
+                            <theme
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Theme"
+                                    name="./theme">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <default
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Default"
+                                            value="default"/>
+                                    <dark
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Dark"
+                                            value="dark"/>
+                                    <accent
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Accent"
+                                            value="accent"/>
+                                </items>
+                            </theme>
+
+                            <backgroundImage
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="Background Image"
+                                    rootPath="/content/dam"
+                                    name="./backgroundImage"/>
+
+                            <alignment
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Content Alignment"
+                                    name="./alignment">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <left
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Left"
+                                            value="left"/>
+                                    <center
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Center"
+                                            value="center"/>
+                                    <right
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Right"
+                                            value="right"/>
+                                </items>
+                            </alignment>
+
+                            <showOverlay
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Show overlay on background image"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./showOverlay"/>
+
+                            <openInNewTab
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Open CTA in new tab"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"
+                                    name="./openInNewTab"/>
+
+                            <badges
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                    fieldLabel="Badges">
+                                <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        name="./badges"
+                                        emptyText="Add a badge label"/>
+                            </badges>
 
                         </items>
 

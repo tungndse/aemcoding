@@ -1,13 +1,31 @@
-<sly data-sly-use.model="com.tungnd.aem.core.models.LabBannerModel"/>
-<div class="labbanner">
-   <p class="labbanner__label">
-       ${model.label || "Lab Banner"}
-   </p>
-   <h2 class="labbanner__title">
-       ${model.title || "Lab Banner"}
-   </h2>
-   <p class="labbanner__description">
-       ${model.jcr:description || "Lab Banner Static Default Description - Please enter some val"}
-   </p>
+<sly data-sly-use.model="com.tungnd.aem.core.models.LabBannerModel" />
+<sly data-sly-test="${model.ready}">
+   <div class="labbanner ${model.themeClass}">
+      <div class="labbanner__media" data-sly-test="${model.backgroundImage}">
+         <img class="labbanner__image" src="${model.backgroundImage}" alt="${model.title}" loading="lazy" />
+      </div>
+      <div class="labbanner__overlay" data-sly-test="${model.showOverlay}"></div>
 
+      <div class="labbanner__content labbanner__content--${model.alignment}">
+         <p data-sly-test="${model.label}" class="labbanner__label">${model.label}</p>
+         <h2 data-sly-test="${model.title}" class="labbanner__title">${model.title}</h2>
+         <p data-sly-test="${model.description}" class="labbanner__description">${model.description}</p>
+
+         <ul data-sly-test="${model.badges.size}" class="labbanner__badges">
+            <li data-sly-list.badge="${model.badges}" class="labbanner__badge">${badge}</li>
+         </ul>
+
+         <a
+                 data-sly-test="${model.ctaText && model.ctaLink}"
+                 class="labbanner__cta"
+                 href="${model.ctaLink}"
+                 target="${model.openInNewTab ? '_blank' : '_self'}"
+                 rel="${model.openInNewTab ? 'noopener noreferrer' : ''}">
+            ${model.ctaText}
+         </a>
+      </div>
+   </div>
+</sly>
+<div data-sly-test="${!model.ready && wcmmode.edit}" class="labbanner-placeholder">
+   Configure the Lab Banner component to show content.
 </div>

@@ -1,12 +1,26 @@
-<div class="labbannerstatic">
-   <p class="labbannerstatic__label">
-       ${properties.label || "Lab Banner Static"}
-   </p>
-   <h2 class="labbannerstatic__title">
-       ${properties.title || "Lab Banner Static"}
-   </h2>
-   <p class="labbannerstatic__description">
-       ${properties.jcr:description || "Lab Banner Static Default Description - Please enter some val"}
-   </p>
+<sly data-sly-set.theme="${properties.theme || 'default'}" />
+<sly data-sly-test="${properties.title}">
+   <div class="labbannerstatic labbannerstatic--${theme}">
+      <div class="labbannerstatic__media" data-sly-test="${properties.backgroundImage}">
+         <img class="labbannerstatic__image" src="${properties.backgroundImage}" alt="${properties.title}" loading="lazy" />
+      </div>
 
+      <div class="labbannerstatic__content">
+         <p data-sly-test="${properties.label}" class="labbannerstatic__label">${properties.label}</p>
+         <h2 class="labbannerstatic__title">${properties.title}</h2>
+         <p data-sly-test="${properties.description}" class="labbannerstatic__description">${properties.description}</p>
+
+         <a
+                 data-sly-test="${properties.ctaLink && properties.ctaText}"
+                 class="labbannerstatic__cta"
+                 href="${properties.ctaLink}"
+                 target="${properties.openInNewTab ? '_blank' : '_self'}"
+                 rel="${properties.openInNewTab ? 'noopener noreferrer' : ''}">
+            ${properties.ctaText}
+         </a>
+      </div>
+   </div>
+</sly>
+<div data-sly-test="${!properties.title && wcmmode.edit}" class="labbanner-placeholder">
+   Configure the Lab Banner Static component to show content.
 </div>
