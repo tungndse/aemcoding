@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 
 )
 public class LabBannerModel {
+    //TODO : Study the tricks in side this model then see if you can memorize some
     private static final String THEME_DEFAULT = "default";
     private static final String THEME_DARK = "dark";
     private static final String THEME_ACCENT = "accent";
