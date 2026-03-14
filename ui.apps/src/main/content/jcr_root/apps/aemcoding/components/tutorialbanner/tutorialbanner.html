@@ -1,0 +1,15 @@
+<sly data-sly-use.model="com.tungnd.aem.core.models.TutorialBannerModel"/>
+<div class="tutorialbanner">
+    <div class="tutorialbanner__glow tutorialbanner__glow--amber"></div>
+    <div class="tutorialbanner__glow tutorialbanner__glow--blue"></div>
+    <div class="tutorialbanner__content">
+        <p class="tutorialbanner__eyebrow">Training Component</p>
+        <p class="tutorialbanner__label" data-sly-test="${model.label}">${model.label}</p>
+        <h2 class="tutorialbanner__title">${model.title}</h2>
+        <p class="tutorialbanner__description">${model.description}</p>
+        <div class="tutorialbanner__meta">
+            <span class="tutorialbanner__meta-item">AEM Practice</span>
+            <span class="tutorialbanner__meta-item">Editable Template Ready</span>
+        </div>
+    </div>
+</div>
