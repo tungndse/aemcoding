@@ -266,6 +266,36 @@
                         </assetToComponentMapping>
                     </cq:authoring>
                 </policy_1574695586800>
+                <policy_tutorial_page_content
+                    jcr:description="Allows tutorial page components and defines the component mapping for the tutorial content area."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Tutorial Page Content"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[group:AEM Coding Practice - Content,group:AEM Coding Practice - Training,/apps/aemcoding/components/form/container]">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:authoring jcr:primaryType="nt:unstructured">
+                        <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                            <mapping_1575030255082
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="media"
+                                assetMimetype="image/*"
+                                droptarget="image"
+                                resourceType="aemcoding/components/image"/>
+                            <mapping_1575030260142
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="content"
+                                assetMimetype="text/html"
+                                droptarget="experiencefragment"
+                                resourceType="aemcoding/components/experiencefragment"/>
+                            <mapping_1575030269139
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="media"
+                                assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
+                                droptarget="contentfragment"
+                                resourceType="aemcoding/components/contentfragment"/>
+                        </assetToComponentMapping>
+                    </cq:authoring>
+                </policy_tutorial_page_content>
                 <policy_649128221558427
                     cq:styleDefaultElement="main"
                     jcr:description="Sets a &lt;main> element on the page content area."
