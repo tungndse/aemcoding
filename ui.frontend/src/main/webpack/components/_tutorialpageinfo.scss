@@ -1,0 +1,114 @@
+.tutorialpageinfo {
+  margin: 2rem 0;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(20, 38, 61, 0.08);
+  background: #fbfcfe;
+  box-shadow: 0 16px 40px rgba(17, 31, 51, 0.08);
+  overflow: hidden;
+}
+
+.tutorialpageinfo__eyebrow {
+  margin: 0;
+  padding: 1.5rem 1.5rem 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8a4d22;
+}
+
+.tutorialpageinfo__title {
+  margin: 0;
+  padding: 0.35rem 1.5rem 1.25rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.05;
+  color: #15283f;
+}
+
+.tutorialpageinfo__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1px;
+  margin: 0;
+  background: rgba(21, 40, 63, 0.08);
+}
+
+.tutorialpageinfo__item {
+  margin: 0;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.tutorialpageinfo__term {
+  margin: 0 0 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5f748c;
+}
+
+.tutorialpageinfo__value {
+  margin: 0;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  word-break: break-word;
+  color: #19314f;
+}
+
+.tutorialpageinfo--dark {
+  background: linear-gradient(135deg, #142235 0%, #223a58 100%);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.tutorialpageinfo--dark .tutorialpageinfo__eyebrow {
+  color: #f0be76;
+}
+
+.tutorialpageinfo--dark .tutorialpageinfo__title {
+  color: #f4f7fb;
+}
+
+.tutorialpageinfo--dark .tutorialpageinfo__list {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.tutorialpageinfo--dark .tutorialpageinfo__item {
+  background: rgba(16, 28, 44, 0.78);
+}
+
+.tutorialpageinfo--dark .tutorialpageinfo__term {
+  color: #a8bbcf;
+}
+
+.tutorialpageinfo--dark .tutorialpageinfo__value {
+  color: #eef4fb;
+}
+
+.tutorialpageinfo--accent {
+  background: linear-gradient(135deg, #fff3df 0%, #fff9f2 54%, #eef7ff 100%);
+  border-color: rgba(202, 107, 42, 0.16);
+}
+
+.tutorialpageinfo--accent .tutorialpageinfo__eyebrow {
+  color: #b4582c;
+}
+
+.tutorialpageinfo--accent .tutorialpageinfo__title {
+  color: #22324d;
+}
+
+@media (max-width: 767px) {
+  .tutorialpageinfo__eyebrow {
+    padding: 1.25rem 1.25rem 0;
+  }
+
+  .tutorialpageinfo__title {
+    padding: 0.35rem 1.25rem 1rem;
+  }
+
+  .tutorialpageinfo__item {
+    padding: 0.9rem 1.25rem;
+  }
+}

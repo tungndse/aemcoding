@@ -1,6 +1,33 @@
 <sly data-sly-use.model="com.tungnd.aem.core.models.TutorialPageInfoModel"/>
-<div class="tutorialpageinfo__">
-    <p class="tutorialpageinfo__label">${model.label}</p>
-    <h2 class="tutorialpageinfo__title">${model.title}</h2>
-    <p class="tutorialpageinfo__description">${model.description}</p>
+<div class="tutorialpageinfo tutorialpageinfo--${model.theme}">
+    <p class="tutorialpageinfo__eyebrow">Page Diagnostics</p>
+    <h2 class="tutorialpageinfo__title">Tutorial Page Info</h2>
+    <dl class="tutorialpageinfo__list">
+        <div class="tutorialpageinfo__item">
+            <dt class="tutorialpageinfo__term">Page Path</dt>
+            <dd class="tutorialpageinfo__value">${model.pagePath}</dd>
+        </div>
+        <div class="tutorialpageinfo__item">
+            <dt class="tutorialpageinfo__term">Page Title</dt>
+            <dd class="tutorialpageinfo__value">${model.pageTitle}</dd>
+        </div>
+        <div class="tutorialpageinfo__item">
+            <dt class="tutorialpageinfo__term">Resource Path</dt>
+            <dd class="tutorialpageinfo__value">${model.resourcePath}</dd>
+        </div>
+        <div class="tutorialpageinfo__item">
+            <dt class="tutorialpageinfo__term">Resource Type</dt>
+            <dd class="tutorialpageinfo__value">${model.resourceType}</dd>
+        </div>
+        <div class="tutorialpageinfo__item">
+            <dt class="tutorialpageinfo__term">Template Path</dt>
+            <dd class="tutorialpageinfo__value">${model.templatePath}</dd>
+        </div>
+        <div class="tutorialpageinfo__item">
+            <dt class="tutorialpageinfo__term">Parent Path</dt>
+            <dd class="tutorialpageinfo__value">${model.parentPath}</dd>
+        </div>
+    </dl>
 </div>
+
+
