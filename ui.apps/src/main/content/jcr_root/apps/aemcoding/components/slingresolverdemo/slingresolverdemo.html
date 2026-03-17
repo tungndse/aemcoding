@@ -1,0 +1,60 @@
+<sly data-sly-use.model="com.tungnd.aem.core.models.SlingResolverDemoModel"/>
+
+<div class="slingresolverdemo">
+    <h2>Sling ResourceResolver Demo</h2>
+    <p>This sample shows how the current resource and a configured path are handled by Sling APIs.</p>
+
+    <dl>
+        <dt>Resolver user</dt>
+        <dd>${model.resolverUserId}</dd>
+
+        <dt>Current resource path</dt>
+        <dd>${model.currentResourcePath}</dd>
+
+        <dt>Current resource type</dt>
+        <dd>${model.currentResourceType}</dd>
+
+        <dt>Containing page path</dt>
+        <dd>${model.containingPagePath}</dd>
+
+        <dt>Containing page title</dt>
+        <dd>${model.containingPageTitle}</dd>
+    </dl>
+
+    <div data-sly-test="${model.hasTargetPath}">
+        <h3>Configured Target Path</h3>
+        <pre>${model.targetPath}</pre>
+
+        <dl>
+            <dt>getResource(targetPath) path</dt>
+            <dd>${model.getResourceResultPath}</dd>
+
+            <dt>getResource(targetPath) resourceType</dt>
+            <dd>${model.getResourceResultType}</dd>
+
+            <dt>resolve(targetPath) path</dt>
+            <dd>${model.resolveResultPath}</dd>
+
+            <dt>resolve(targetPath) resourceType</dt>
+            <dd>${model.resolveResultType}</dd>
+
+            <dt>map(targetPath)</dt>
+            <dd>${model.mappedTargetPath}</dd>
+        </dl>
+
+        <div data-sly-test="${model.hasTargetResource}">
+            <h3>First Child Resources Under Target</h3>
+            <ul data-sly-list.child="${model.targetChildren}">
+                <li>
+                    <strong>${child.name}</strong><br/>
+                    <span>${child.path}</span><br/>
+                    <code>${child.resourceType}</code>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-sly-test="${!model.hasTargetPath}">
+        <p>Set a target path in the dialog to compare getResource, resolve, and map.</p>
+    </div>
+</div>

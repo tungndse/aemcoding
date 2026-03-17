@@ -1,0 +1,32 @@
+<sly data-sly-use.model="com.tungnd.aem.core.models.MyResolverDemo"></sly>
+<div class="myresolverdemo">
+    <h2>My Resource Resolver Demo</h2>
+    <p>This demo shows how the current resource and a configured path are handled by Sling APIs.</p>
+    <dl>
+        <dt>Current Resource Path</dt>
+        <dd>${model.currentResourcePath}</dd>
+
+        <dt>Current resource type</dt>
+        <dd>${model.currentResourceType}</dd>
+
+        <dt>Containing page path</dt>
+        <dd>${model.containingPagePath}</dd>
+
+    </dl>
+    <div data-sly-test="${model.hasTargetPath}">
+
+        <h3>Configured Target Path</h3>
+        <pre>${properties.targetPath}</pre>
+
+        <dl>
+            <dt>Target resource path:</dt>
+            <dd>${model.targetResourcePath}</dd>
+            <dt>Target resource type:</dt>
+            <dd>${model.targetResourceType}</dd>
+            <dt>Resolved path:</dt>
+            <dd>${model.resolvedPath}</dd>
+        </dl>
+
+    </div>
+
+</div>
