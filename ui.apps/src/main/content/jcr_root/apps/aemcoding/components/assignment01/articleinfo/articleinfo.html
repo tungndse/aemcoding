@@ -1,0 +1,35 @@
+<sly data-sly-use.model="com.tungnd.aem.core.models.ArticleInfoModel"/>
+
+<div class="cmp-articleinfo">
+    <div data-sly-test="${model.complete}">
+        <h2 class="cmp-articleinfo__title"
+            data-sly-attribute.style="${model.featured ? 'background: aquamarine; font-style: oblique' : ''}">
+            ${model.title}
+        </h2>
+
+        <p class="cmp-articleinfo__author">${model.author}</p>
+        <p class="cmp-articleinfo__summary">${model.summary}</p>
+
+        <p class="cmp-articleinfo__reading-time" data-sly-test="${model.hasReadingTime}">
+            ${model.formattedReadingTime}
+        </p>
+
+        <p class="cmp-articleinfo__category" data-sly-test="${model.category}">
+            ${model.category}
+        </p>
+
+        <p class="cmp-articleinfo__publish-date" data-sly-test="${model.publishDate}">
+            ${model.publishDate}
+        </p>
+
+        <ul class="cmp-articleinfo__tags"
+            data-sly-test="${model.hasTags}"
+            data-sly-list.tagTitle="${model.tagTitles}">
+            <li>${tagTitle}</li>
+        </ul>
+    </div>
+
+    <div data-sly-test="${!model.complete}">
+        <p style="background: red">This Article Info is NOT COMPLETED YET</p>
+    </div>
+</div>
